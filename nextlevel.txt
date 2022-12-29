@@ -1,0 +1,36 @@
+
+
+xIsNext: (step % 2) === 0,
+//easy-random "O" according to nulls
+//less=-difficult-close some conditions-> to array items values and the order of Xs(forexample if (a[0]||a[2]) == "X")=>{a[1] = "O"}
+(a[3]||a[5]) == "X")=>{a[2] = "O"}
+(a[6]||a[8]) == "X")=>{a[7] = "O"}
+
+//more difficult-> close most of the conditions
+//most difficult-> close all of the conditions
+and  
+//if O {
+ if (squares[i] == null){
+	setstate(squares[i] = "O")
+}
+//
+///make xIsNext 
+function calculateWinner(squares) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
+}
